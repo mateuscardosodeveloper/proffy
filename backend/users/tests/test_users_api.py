@@ -56,7 +56,7 @@ class PrivateUsersApiTests(TestCase):
         payload = {
             'name': 'Mateus Cardoso',
             'avatar': 'https://avatars.githubusercontent.com/u/14567480?v=4',
-            'whatsapp': '999999999',
+            'whatsapp': 999999999,
             'bio': 'Great proffessor in programation using language Python',
         }
         response = self.client.post(USERS_URL, payload)
@@ -68,7 +68,7 @@ class PrivateUsersApiTests(TestCase):
         payload = {
             'name': '',
             'avatar': 'https://avatars.githubusercontent.com/u/14567480?v=4',
-            'whatsapp': '123456789',
+            'whatsapp': 123456789,
             'bio': '',
         }
         response = self.client.post(USERS_URL, payload)

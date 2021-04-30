@@ -15,7 +15,3 @@ class UsersViewSet(viewsets.ModelViewSet):
     """Manage Users in the database"""
     serializer_class = serializers.UsersSerializer
     queryset = Users.objects.all()
-
-    def _params_to_ints(self, qs):
-        """Convert a list of string IDs to a list of integers"""
-        return [int(str_id) for str_id in qs.split(',')]
