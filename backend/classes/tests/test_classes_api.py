@@ -7,7 +7,7 @@ from rest_framework.test import APIClient
 from classes import serializers
 from core.models import Users, Classes
 
-CLASSES_URL = reverse('classes:classes-list')
+CLASSES_URL = reverse('class:classes-list')
 
 
 def sample_users(name='test', avatar='foto.url', whatsapp=123, bio='blah'):
@@ -23,7 +23,7 @@ def sample_classes(users, subject='Ciências', price=90.00):
 
 def detail_url(classes_id):
     """See details urls"""
-    return reverse('classes:classes-detail', args=[classes_id])
+    return reverse('class:classes-detail', args=[classes_id])
 
 
 class PrivateClassesTests(TestCase):

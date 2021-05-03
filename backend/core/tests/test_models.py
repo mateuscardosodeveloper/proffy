@@ -28,13 +28,13 @@ class ModelsTests(TestCase):
 
     def test_users_str(self):
         """Test the Users string representation"""
-        self.users = models.Users.objects.create(
+        users = models.Users.objects.create(
             name='Mateus Cardoso',
             avatar='https://avatars.githubusercontent.com/u/14567480?v=4',
             whatsapp='123456789',
             bio='Great proffessor in programation using language Python',
         )
-        self.assertEqual(str(self.users), self.users.name)
+        self.assertEqual(str(users), users.name)
 
     def test_classes_str(self):
         """Test the Classes string representation"""
@@ -46,12 +46,13 @@ class ModelsTests(TestCase):
 
         self.assertEqual(str(classes), classes.subject)
 
-
-"""     def test_classshedule_int(self):
-        Test the ClassSchedule integer representation
+    def test_classshedule_int(self):
+        """Test the ClassSchedule integer representation"""
         class_schedule = models.ClassSchedule.objects.create(
             week_day=1,
             initial_hour_lesson=10.00,
             final_hour_lesson=11.00,
-            classes=sample_classes()
-        ) """
+            classes=sample_classes(sample_users())
+        )
+
+        self.assertEqual(class_schedule.week_day, int(class_schedule.week_day))

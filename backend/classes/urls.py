@@ -7,7 +7,7 @@ from classes import views
 route = DefaultRouter()
 route.register('classes', views.ClassesViewSets)
 
-app_name = 'classes'
+app_name = 'class'
 
 urlpatterns = [
     path('', include(route.urls))

@@ -25,3 +25,6 @@ class ClassSchedule(models.Model):
     initial_hour_lesson = models.IntegerField()
     final_hour_lesson = models.IntegerField()
     classes = models.ForeignKey(Classes, on_delete=models.CASCADE)
+
+    def __repr__(self):
+        return self.week_day
